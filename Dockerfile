@@ -15,6 +15,4 @@ RUN apk del make gcc g++ python
 # Bundle app source
 COPY . /src
 
-EXPOSE 6969
-
 CMD ["npm","start"]

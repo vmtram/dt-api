@@ -1,4 +1,16 @@
-duongtang_api:
-  image: quocnguyen/duongtang-api
-  mem_limit: 1024m
-  env_file: .env
+version: "2.4"
+services:
+  google-getlink-api:
+    build: .
+    ports:
+    - "9992:8000"
+    env_file:
+    - ./env_files/local.env
+    #external_links:
+    #  - redis
+    #  - mongo
+    networks:
+      - same-network
+networks:
+  same-network:
+    external: true
